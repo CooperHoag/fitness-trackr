@@ -25,6 +25,12 @@ export function AuthProvider({ children }) {
     if (!response.ok) throw result;
     setToken(result.token);
   };
+  // use local storage (URL) use the set method in both register and login
+  // need a useEffect (onlygoing to fire on intial load and refresh)
+  // inside useEffect use get Method of local storage
+  // try and get token
+  // if able to get token, put token back into token state
+    // using setToken setter function
 
   const login = async (credentials) => {
     const response = await fetch(API + "/users/login", {
